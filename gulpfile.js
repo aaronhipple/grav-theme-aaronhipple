@@ -14,7 +14,6 @@ gulp.task('compile', function () {
             sourcemap: true,
             style: 'expanded'
         }))
-        .pipe(gulp.dest('/tmp/aaronhipple-scss'))
     ]
 })
 

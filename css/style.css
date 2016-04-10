@@ -1,6 +1,115 @@
+h1, h2, h3, h4, h5, h6, b, strong {
+  font-weight: 800;
+}
+
+i, em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-size: 1px 0px;
+  background-position: 0 100%;
+  transition: background-size 50ms linear;
+}
+#header a, #footer a {
+  color: #aeb4b7;
+  background-image: linear-gradient(#9f9793 0%, #9f9793 100%);
+  text-shadow: 0 0 0 transparent, -1px -1px 0 #494D50, 0px -1px 0 #494D50, 1px -1px 0 #494D50, -1px 0px 0 #494D50, 0px 0px 0 #494D50, 1px 0px 0 #494D50, -1px 1px 0 #494D50, 0px 1px 0 #494D50, 1px 1px 0 #494D50, -2px -2px 0 #494D50, -1px -2px 0 #494D50, 0px -2px 0 #494D50, 1px -2px 0 #494D50, 2px -2px 0 #494D50, -2px -1px 0 #494D50, -1px -1px 0 #494D50, 0px -1px 0 #494D50, 1px -1px 0 #494D50, 2px -1px 0 #494D50, -2px 0px 0 #494D50, -1px 0px 0 #494D50, 0px 0px 0 #494D50, 1px 0px 0 #494D50, 2px 0px 0 #494D50, -2px 1px 0 #494D50, -1px 1px 0 #494D50, 0px 1px 0 #494D50, 1px 1px 0 #494D50, 2px 1px 0 #494D50, -2px 2px 0 #494D50, -1px 2px 0 #494D50, 0px 2px 0 #494D50, 1px 2px 0 #494D50, 2px 2px 0 #494D50;
+}
+#navbar a {
+  background-image: linear-gradient(#9f9793 0%, #9f9793 100%);
+}
+#body a {
+  color: #7a8085;
+  background-image: linear-gradient(#9e9894 0%, #9e9894 100%);
+  text-shadow: 0 0 0 transparent, -1px -1px 0 #E4E6E7, 0px -1px 0 #E4E6E7, 1px -1px 0 #E4E6E7, -1px 0px 0 #E4E6E7, 0px 0px 0 #E4E6E7, 1px 0px 0 #E4E6E7, -1px 1px 0 #E4E6E7, 0px 1px 0 #E4E6E7, 1px 1px 0 #E4E6E7, -2px -2px 0 #E4E6E7, -1px -2px 0 #E4E6E7, 0px -2px 0 #E4E6E7, 1px -2px 0 #E4E6E7, 2px -2px 0 #E4E6E7, -2px -1px 0 #E4E6E7, -1px -1px 0 #E4E6E7, 0px -1px 0 #E4E6E7, 1px -1px 0 #E4E6E7, 2px -1px 0 #E4E6E7, -2px 0px 0 #E4E6E7, -1px 0px 0 #E4E6E7, 0px 0px 0 #E4E6E7, 1px 0px 0 #E4E6E7, 2px 0px 0 #E4E6E7, -2px 1px 0 #E4E6E7, -1px 1px 0 #E4E6E7, 0px 1px 0 #E4E6E7, 1px 1px 0 #E4E6E7, 2px 1px 0 #E4E6E7, -2px 2px 0 #E4E6E7, -1px 2px 0 #E4E6E7, 0px 2px 0 #E4E6E7, 1px 2px 0 #E4E6E7, 2px 2px 0 #E4E6E7;
+}
+a:hover, a:focus {
+  transition: background-size 50ms linear;
+  background-size: 1px 2px;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
 body {
-  background: #eee;
-  color: #444;
+  background: #E4E6E7;
+  color: #494D50;
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+#sb-site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#header, #body, #footer {
+  padding: 0.75em;
+}
+#header .container, #body .container, #footer .container {
+  max-width: 40em;
+  margin: auto;
+}
+
+#header, #footer {
+  background: #494D50;
+  color: #E4E6E7;
+}
+
+#body {
+  flex: 1;
+}
+
+#header {
+  padding-bottom: 0;
+  text-align: center;
+  border-bottom: 0.75em solid #7a8085;
+  /* @media (min-width: $max-width) {
+      .container {
+          display: flex;
+          align-items: baseline;
+      }
+      #logo {
+          text-align: left;
+      }
+      #navbar {
+          flex: 1;
+          text-align: right;
+          margin-left: rhythm(1);
+      }
+  } */
+}
+#header #logo h3 {
+  font-size: 3em;
+  line-height: 1.5em;
+  margin: 0;
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+}
+#header #navbar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#header #navbar ul li {
+  display: inline-block;
+}
+#header #navbar a {
+  display: block;
+  padding: 0.75em;
+}
+
+#footer {
+  text-align: right;
+  border-top: 0.75em solid #7a8085;
 }
 
 /*# sourceMappingURL=style.css.map */

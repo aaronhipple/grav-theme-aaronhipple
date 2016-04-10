@@ -1,0 +1,43 @@
+@import "compass/typography/vertical_rhythm";
+$base-font-size: 16px;
+$base-line-height: 1.5 * $base-font-size;
+
+$dark-bg-link-accent: adjust-hue(darken($main-bg, 30%), 180deg);
+$light-bg-link-accent: adjust-hue(lighten($main-fg, 30%), 180deg);
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: 800;
+}
+
+i, em {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+
+    #header &, #footer & {
+        color: darken($main-bg, 20%);
+        background-image: linear-gradient($dark-bg-link-accent 0%,$dark-bg-link-accent 100%);
+        @include stroke(2px, $main-fg);
+    }
+
+    #navbar & {
+        background-image: linear-gradient($dark-bg-link-accent 0%,$dark-bg-link-accent 100%);
+    }
+
+    #body & {
+        color: lighten($main-fg, 20%);
+        background-image: linear-gradient($light-bg-link-accent 0%,$light-bg-link-accent 100%);
+        @include stroke(2px, $main-bg);
+    }
+
+    background-repeat: repeat-x;
+    background-size: 1px 0px;
+    background-position: 0 100%;
+    transition: background-size 50ms linear;
+    &:hover, &:focus {
+        transition: background-size 50ms linear;
+        background-size: 1px 2px;
+    }
+}

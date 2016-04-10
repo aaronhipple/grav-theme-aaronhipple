@@ -1,0 +1,42 @@
+#header {
+    padding-bottom: 0;
+    text-align: center;
+    border-bottom: rhythm(1/2) solid lighten($main-fg, 20%);
+    #logo {
+        h3 {
+            @include adjust-font-size-to(3 * $base-font-size);
+            margin: 0;
+            font-family: $font-heading;
+            font-weight: 400;
+        }
+    }
+
+    #navbar {
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+            }
+        }
+        a {
+            display: block;
+            padding: rhythm(1/2);
+        }
+    }
+    /* @media (min-width: $max-width) {
+        .container {
+            display: flex;
+            align-items: baseline;
+        }
+        #logo {
+            text-align: left;
+        }
+        #navbar {
+            flex: 1;
+            text-align: right;
+            margin-left: rhythm(1);
+        }
+    } */
+}

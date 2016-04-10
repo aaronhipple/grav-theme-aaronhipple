@@ -1,6 +1,46 @@
 @charset 'utf-8';
 
+$main-bg: #E4E6E7;
+$main-fg: #494D50;
+$max-width: 40em;
+$font-heading: 'Righteous', sans-serif;
+$font-primary: 'Arvo', serif;
+
+@import 'mixins';
+@import 'typography';
+@include establish-baseline();
+ 
 body {
-    background: #eee;
-    color: #444;
+    background: $main-bg;
+    color: $main-fg;
+    font-family: $font-primary;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
 }
+
+#sb-site {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header, #body, #footer {
+    padding: rhythm(1/2);
+    .container {
+        max-width: $max-width;
+        margin: auto;
+    }
+}
+
+#header, #footer {
+    background: $main-fg;
+    color: $main-bg;
+}
+
+#body {
+    flex: 1;
+}
+
+@import 'header';
+@import 'footer';
