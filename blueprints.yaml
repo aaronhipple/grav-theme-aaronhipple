@@ -1,0 +1,35 @@
+name: Aaron Hipple
+version: 0.1.0
+description: "Aaron Hipple's site theme"
+icon: music
+author:
+  name: Aaron Hipple
+  email: aaron@aaronhipple.com
+  url: https://www.aaronhipple.com
+homepage: https://www.aaronhipple.com
+demo: https://www.aaronhipple.com
+keywords: aaronhipple, theme, fast, responsive, html5, css3, minimal
+bugs: https://www.aaronhipple.com
+license: GPLv2
+
+form:
+  validation: loose
+  fields:
+    default_lang:
+      type: text
+      size: x-small
+      label: Default lang
+      default: 'en'
+      validate:
+        type: text
+
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 1
+        options:
+          1: Enabled
+          0: Disabled
+        validate:
+          type: bool
