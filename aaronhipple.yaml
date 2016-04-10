@@ -8,4 +8,4 @@ streams:
     theme:
       type: ReadOnlyStream
       paths:
-        - user/themes/antimatter
+        - user/themes/aaronhipple
