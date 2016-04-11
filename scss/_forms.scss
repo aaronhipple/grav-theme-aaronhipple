@@ -1,0 +1,81 @@
+$form-accent-color: saturate(lighten(adjust-hue($main-fg, 180deg), 30%), 20%);
+
+::-webkit-input-placeholder {
+   color: lighten($main-fg, 20%);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: lighten($main-fg, 20%);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: lighten($main-fg, 20%);
+}
+
+:-ms-input-placeholder {  
+   color: lighten($main-fg, 20%);
+}
+
+input,
+select,
+textarea {
+    font-family: $font-primary;
+    background: #fff;
+    color: $main-fg;
+    border: 0;
+    width: 100%;
+    height: auto;
+    padding: rhythm(1/2) rhythm(1);
+    &:focus {
+        color: $main-fg;
+        border-right: rhythm(1/2) solid $form-accent-color;
+    }
+}
+
+.form-field {
+    display: flex;
+    align-items: stretch;
+    margin: rhythm(1) auto;
+    width: 100%;
+    .form-label {
+        display: flex;
+        align-items: center;
+        background: $main-fg;
+        color: $main-bg;
+        padding: rhythm(1/2) rhythm(1);
+    }
+    .form-data, 
+    .form-data * {
+        flex: 1;
+        display: flex;
+        align-items: stretch;
+    }
+}
+
+.buttons {
+    text-align: center;
+}
+
+button,
+.button,
+input {
+    &[type=submit] {
+        background-color: lighten($form-accent-color, 10%);
+    }
+}
+
+button,
+.button,
+input[type=submit],
+input[type=reset] {
+    background: none;
+    font-family: $font-primary;
+    color: $main-fg;
+    padding: rhythm(1/2) rhythm(1);
+    border: 3px solid $main-fg;
+    &:hover,
+    &:focus {
+        background: $main-fg;
+        color: $main-bg;
+    }
+}
