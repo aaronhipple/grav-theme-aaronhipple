@@ -8,6 +8,7 @@ i, em {
 
 a {
   text-decoration: none;
+  outline: 0;
   background-repeat: repeat-x;
   background-size: 1px 0px;
   background-position: 0 100%;
@@ -20,6 +21,14 @@ a {
 }
 #navbar a {
   background-image: linear-gradient(#9f9793 0%, #9f9793 100%);
+  background-color: #494D50;
+}
+#navbar a:active {
+  background-color: #4e5255;
+  text-shadow: 0 0 0 transparent, -1px -1px 0 #4e5255, 0px -1px 0 #4e5255, 1px -1px 0 #4e5255, -1px 0px 0 #4e5255, 0px 0px 0 #4e5255, 1px 0px 0 #4e5255, -1px 1px 0 #4e5255, 0px 1px 0 #4e5255, 1px 1px 0 #4e5255, -2px -2px 0 #4e5255, -1px -2px 0 #4e5255, 0px -2px 0 #4e5255, 1px -2px 0 #4e5255, 2px -2px 0 #4e5255, -2px -1px 0 #4e5255, -1px -1px 0 #4e5255, 0px -1px 0 #4e5255, 1px -1px 0 #4e5255, 2px -1px 0 #4e5255, -2px 0px 0 #4e5255, -1px 0px 0 #4e5255, 0px 0px 0 #4e5255, 1px 0px 0 #4e5255, 2px 0px 0 #4e5255, -2px 1px 0 #4e5255, -1px 1px 0 #4e5255, 0px 1px 0 #4e5255, 1px 1px 0 #4e5255, 2px 1px 0 #4e5255, -2px 2px 0 #4e5255, -1px 2px 0 #4e5255, 0px 2px 0 #4e5255, 1px 2px 0 #4e5255, 2px 2px 0 #4e5255;
+}
+#navbar .active a {
+  background-size: 1px 1px;
 }
 #body a {
   color: #7a8085;

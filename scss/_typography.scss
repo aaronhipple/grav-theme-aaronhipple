@@ -15,6 +15,7 @@ i, em {
 
 a {
     text-decoration: none;
+    outline: 0;
 
     #header &, #footer & {
         color: darken($main-bg, 20%);
@@ -24,6 +25,15 @@ a {
 
     #navbar & {
         background-image: linear-gradient($dark-bg-link-accent 0%,$dark-bg-link-accent 100%);
+        background-color: $main-fg;
+        &:active {
+            background-color: lighten($main-fg, 2%);
+            @include stroke(2px, lighten($main-fg, 2%));
+        }
+    }
+
+    #navbar .active & {
+        background-size: 1px 1px;
     }
 
     #body & {
@@ -36,6 +46,7 @@ a {
     background-size: 1px 0px;
     background-position: 0 100%;
     transition: background-size 50ms linear;
+
     &:hover, &:focus {
         transition: background-size 50ms linear;
         background-size: 1px 2px;
