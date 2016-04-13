@@ -20,21 +20,29 @@ input,
 select,
 textarea {
     font-family: $font-primary;
+    @include adjust-font-size-to($base-font-size);
     background: #fff;
     color: $main-fg;
     border: 0;
     width: 100%;
     height: auto;
     padding: rhythm(1/2) rhythm(1);
+    transition: border-right 100ms ease-in;
+    border-right: 0 solid $form-accent-color;
     &:focus {
         color: $main-fg;
-        border-right: rhythm(1/2) solid $form-accent-color;
+        transition: border-right 100ms ease-in;
+        border-right-width: rhythm(1/2);
     }
 }
 
 .form-field {
     display: flex;
     align-items: stretch;
+    flex-direction: column;
+    @media (min-width: $max-width) {
+        flex-direction: row;        
+    }
     margin: rhythm(1) auto;
     width: 100%;
     .form-label {

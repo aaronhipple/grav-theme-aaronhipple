@@ -13,7 +13,8 @@
 
     {% block stylesheets %}
         {% do assets.addCss('https://fonts.googleapis.com/css?family=Righteous&text=Aaron+Hipple') %}
-        {% do assets.addCss('https://fonts.googleapis.com/css?family=Arvo:400,400italic,700') %}
+        {# do assets.addCss('https://fonts.googleapis.com/css?family=Arvo:400,400italic,700') #}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Cabin:400,400italic,700') %}
         {% do assets.addCss('theme://css/style.css') %}
 
         {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
@@ -23,7 +24,7 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.addJs('jquery',101) %}
+        {# {% do assets.addJs('jquery',101) %} #}
     {% endblock %}
     {{ assets.js() }}
 
@@ -35,7 +36,7 @@
         <header id="header">
             <div class="container">
                 <div id="logo">
-                    <h3><a href="{{ base_url == '' ? '/' : base_url }}">{{ config.site.title }}</a></h3>
+                    <h3><a href="{{ base_url == '' ? '/' : base_url }}">{{ config.site.title|replace({' ': '<br>'}) }}</a></h3>
                 </div>
                 <div id="navbar">
                     {% block header_extra %}{% endblock %}

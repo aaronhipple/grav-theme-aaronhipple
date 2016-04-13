@@ -1,0 +1,10 @@
+{% if not empty(albums) %}
+    <ul class="albums">
+        {% for album in albums %}
+            <li><a href="{{ album.url }}">
+                {{ album.title }}
+                {% if not empty(album.header.subtitle) %}<span class="subtitle">{{ album.header.subtitle }}</span>{% endif %}
+            </a></li>
+        {% endfor %}
+    </ul>
+{% endif %}

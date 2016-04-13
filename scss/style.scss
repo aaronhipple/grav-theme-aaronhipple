@@ -4,15 +4,15 @@ $main-bg: #E4E6E7;
 $main-fg: #494D50;
 $max-width: 40em;
 $font-heading: 'Righteous', sans-serif;
-$font-primary: 'Arvo', serif;
+$font-primary: 'Cabin', sans-serif;
 
+@import 'functions';
 @import 'mixins';
 @import 'typography';
 @include establish-baseline();
  
 body {
     background: $main-bg;
-    color: $main-fg;
     font-family: $font-primary;
     font-weight: 400;
     margin: 0;
@@ -45,3 +45,4 @@ body {
 @import 'header';
 @import 'footer';
 @import 'forms';
+@import 'pages';

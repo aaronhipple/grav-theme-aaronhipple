@@ -3,7 +3,7 @@
 {% block content %}
     
     {% include "partials/title.html.twig" %}
-    {{ content }}
-    {% include "forms/form.html.twig" %}
+	{{ page.content }}
+    {% include "partials/tracks.html.twig" %}
 
 {% endblock %}

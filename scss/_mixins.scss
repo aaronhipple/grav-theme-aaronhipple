@@ -21,3 +21,38 @@
 
     text-shadow: $shadow;
 }
+
+@mixin dot($color, $top, $left, $size) {
+    $outer-dot-size: $size;
+    $inner-dot-size: $size * 2/3;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: $color;
+        z-index: -3;
+    }
+    &:before {
+        top: calc(#{$top} - #{$outer-dot-size / 2});
+        left: calc(#{$left} - #{$outer-dot-size / 2});
+        border-radius: $outer-dot-size / 2;
+        width: $outer-dot-size;
+        height: $outer-dot-size;
+    }
+    &:after {
+        top: calc(#{$top} - #{$inner-dot-size / 2});
+        left: calc(#{$left} - #{$inner-dot-size / 2});
+        border-radius: $inner-dot-size / 2;
+        width: $inner-dot-size;
+        height: $inner-dot-size;
+    }
+}
+
+@mixin baseline-grid($baseline: 24px, $line-color-01: #ccc, $line-color-02: transparent) {
+     background: -webkit-repeating-linear-gradient(0deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:    -moz-repeating-linear-gradient(0deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:      -ms-repeating-linear-gradient(0deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:      -o-repeating-linear-gradient(0deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:           repeating-linear-gradient(0deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+}

@@ -1,5 +1,79 @@
+body {
+  color: #6e7478;
+}
+
 h1, h2, h3, h4, h5, h6, b, strong {
   font-weight: 800;
+}
+
+#body h6 {
+  font-size: 19px;
+  font-size: 1.16667rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  color: #6e7478;
+}
+#body h5 {
+  font-size: 22px;
+  font-size: 1.36111rem;
+  line-height: 48px;
+  line-height: 3rem;
+  color: #676d71;
+}
+#body h4 {
+  font-size: 25px;
+  font-size: 1.58796rem;
+  line-height: 48px;
+  line-height: 3rem;
+  color: #61676b;
+}
+#body h3 {
+  font-size: 30px;
+  font-size: 1.85262rem;
+  line-height: 48px;
+  line-height: 3rem;
+  color: #5b6064;
+}
+#body h2 {
+  font-size: 35px;
+  font-size: 2.16139rem;
+  line-height: 48px;
+  line-height: 3rem;
+  color: #555a5d;
+}
+#body h1 {
+  font-size: 40px;
+  font-size: 2.52163rem;
+  line-height: 48px;
+  line-height: 3rem;
+  color: #4f5357;
+}
+#body h1, #body h2, #body h3, #body h4, #body h5, #body h6 {
+  text-transform: lowercase;
+  letter-spacing: -0.03125em;
+  position: relative;
+  text-align: center;
+}
+#body h1:before, #body h1:after, #body h2:before, #body h2:after, #body h3:before, #body h3:after, #body h4:before, #body h4:after, #body h5:before, #body h5:after, #body h6:before, #body h6:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: rgba(80, 76, 73, 0.04);
+  z-index: -3;
+}
+#body h1:before, #body h2:before, #body h3:before, #body h4:before, #body h5:before, #body h6:before {
+  top: calc(50% - 1em);
+  left: calc(50% - 1em);
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+}
+#body h1:after, #body h2:after, #body h3:after, #body h4:after, #body h5:after, #body h6:after {
+  top: calc(50% - 0.66667em);
+  left: calc(50% - 0.66667em);
+  border-radius: 0.66667em;
+  width: 1.33333em;
+  height: 1.33333em;
 }
 
 i, em {
@@ -12,7 +86,7 @@ a {
   background-repeat: repeat-x;
   background-size: 1px 0px;
   background-position: 0 100%;
-  transition: background-size 50ms linear;
+  transition: background-size 100ms ease-in;
 }
 #header a, #footer a {
   color: #aeb4b7;
@@ -21,23 +95,23 @@ a {
 }
 #navbar a {
   background-image: linear-gradient(#9f9793 0%, #9f9793 100%);
-  background-color: #494D50;
-}
-#navbar a:active {
-  background-color: #4e5255;
-  text-shadow: 0 0 0 transparent, -1px -1px 0 #4e5255, 0px -1px 0 #4e5255, 1px -1px 0 #4e5255, -1px 0px 0 #4e5255, 0px 0px 0 #4e5255, 1px 0px 0 #4e5255, -1px 1px 0 #4e5255, 0px 1px 0 #4e5255, 1px 1px 0 #4e5255, -2px -2px 0 #4e5255, -1px -2px 0 #4e5255, 0px -2px 0 #4e5255, 1px -2px 0 #4e5255, 2px -2px 0 #4e5255, -2px -1px 0 #4e5255, -1px -1px 0 #4e5255, 0px -1px 0 #4e5255, 1px -1px 0 #4e5255, 2px -1px 0 #4e5255, -2px 0px 0 #4e5255, -1px 0px 0 #4e5255, 0px 0px 0 #4e5255, 1px 0px 0 #4e5255, 2px 0px 0 #4e5255, -2px 1px 0 #4e5255, -1px 1px 0 #4e5255, 0px 1px 0 #4e5255, 1px 1px 0 #4e5255, 2px 1px 0 #4e5255, -2px 2px 0 #4e5255, -1px 2px 0 #4e5255, 0px 2px 0 #4e5255, 1px 2px 0 #4e5255, 2px 2px 0 #4e5255;
+  position: relative;
+  z-index: 4;
 }
 #navbar .active a {
   background-size: 1px 1px;
 }
 #body a {
-  color: #7a8085;
-  background-image: linear-gradient(#9e9894 0%, #9e9894 100%);
+  background-image: linear-gradient(rgba(158, 152, 148, 0.5) 0%, rgba(158, 152, 148, 0.5) 100%);
   text-shadow: 0 0 0 transparent, -1px -1px 0 #E4E6E7, 0px -1px 0 #E4E6E7, 1px -1px 0 #E4E6E7, -1px 0px 0 #E4E6E7, 0px 0px 0 #E4E6E7, 1px 0px 0 #E4E6E7, -1px 1px 0 #E4E6E7, 0px 1px 0 #E4E6E7, 1px 1px 0 #E4E6E7, -2px -2px 0 #E4E6E7, -1px -2px 0 #E4E6E7, 0px -2px 0 #E4E6E7, 1px -2px 0 #E4E6E7, 2px -2px 0 #E4E6E7, -2px -1px 0 #E4E6E7, -1px -1px 0 #E4E6E7, 0px -1px 0 #E4E6E7, 1px -1px 0 #E4E6E7, 2px -1px 0 #E4E6E7, -2px 0px 0 #E4E6E7, -1px 0px 0 #E4E6E7, 0px 0px 0 #E4E6E7, 1px 0px 0 #E4E6E7, 2px 0px 0 #E4E6E7, -2px 1px 0 #E4E6E7, -1px 1px 0 #E4E6E7, 0px 1px 0 #E4E6E7, 1px 1px 0 #E4E6E7, 2px 1px 0 #E4E6E7, -2px 2px 0 #E4E6E7, -1px 2px 0 #E4E6E7, 0px 2px 0 #E4E6E7, 1px 2px 0 #E4E6E7, 2px 2px 0 #E4E6E7;
+  color: #b87747;
 }
-a:hover, a:focus {
-  transition: background-size 50ms linear;
-  background-size: 1px 2px;
+#body a:visited {
+  color: #756457;
+}
+a:hover, a:focus, #navbar .active a:hover, #navbar .active a:focus {
+  transition: background-size 100ms ease-in;
+  background-size: 1px 3px;
 }
 
 html {
@@ -47,8 +121,7 @@ html {
 
 body {
   background: #E4E6E7;
-  color: #494D50;
-  font-family: "Arvo", serif;
+  font-family: "Cabin", sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -61,7 +134,7 @@ body {
 }
 
 #header, #body, #footer {
-  padding: 0.75em;
+  padding: 0.75rem;
 }
 #header .container, #body .container, #footer .container {
   max-width: 40em;
@@ -78,47 +151,72 @@ body {
 }
 
 #header {
+  overflow: hidden;
   padding-bottom: 0;
   text-align: center;
-  border-bottom: 0.75em solid #7a8085;
-  /* @media (min-width: $max-width) {
-      .container {
-          display: flex;
-          align-items: baseline;
-      }
-      #logo {
-          text-align: left;
-      }
-      #navbar {
-          flex: 1;
-          text-align: right;
-          margin-left: rhythm(1);
-      }
-  } */
+  border-bottom: 0.75rem solid #7a8085;
+  text-transform: lowercase;
 }
-#header #logo h3 {
-  font-size: 3em;
-  line-height: 1.5em;
+
+#logo h3 {
+  font-size: 64px;
+  font-size: 4.00425rem;
+  line-height: 72px;
+  line-height: 4.5rem;
   margin: 0;
   font-family: "Righteous", sans-serif;
   font-weight: 400;
 }
-#header #navbar ul {
+#logo a {
+  display: inline-block;
+  position: relative;
+  background-image: none;
+  transition: transform 250ms ease-in;
+  transform: perspective(10em) rotateX(-25deg);
+}
+#logo a:hover, #logo a:active {
+  transition: transform 250ms ease-in;
+  transform: rotateX(0deg);
+}
+#logo a:before, #logo a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: rgba(206, 204, 202, 0.1);
+  z-index: -3;
+}
+#logo a:before {
+  top: calc(50% - 1.165em);
+  left: calc(50% - 1.165em);
+  border-radius: 1.165em;
+  width: 2.33em;
+  height: 2.33em;
+}
+#logo a:after {
+  top: calc(50% - 0.77667em);
+  left: calc(50% - 0.77667em);
+  border-radius: 0.77667em;
+  width: 1.55333em;
+  height: 1.55333em;
+}
+
+#navbar ul {
   padding: 0;
   margin: 0;
+  margin-top: 0.75rem;
   list-style: none;
 }
-#header #navbar ul li {
+#navbar ul li {
   display: inline-block;
 }
-#header #navbar a {
+#navbar a {
   display: block;
-  padding: 0.75em;
+  padding: 0.75rem;
 }
 
 #footer {
-  text-align: right;
-  border-top: 0.75em solid #7a8085;
+  text-align: center;
+  border-top: 0.75rem solid #7a8085;
 }
 
 ::-webkit-input-placeholder {
@@ -142,33 +240,46 @@ body {
 input,
 select,
 textarea {
-  font-family: "Arvo", serif;
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   background: #fff;
   color: #494D50;
   border: 0;
   width: 100%;
   height: auto;
-  padding: 0.75em 1.5em;
+  padding: 0.75rem 1.5rem;
+  transition: border-right 100ms ease-in;
+  border-right: 0 solid #b29580;
 }
 input:focus,
 select:focus,
 textarea:focus {
   color: #494D50;
-  border-right: 0.75em solid #b29580;
+  transition: border-right 100ms ease-in;
+  border-right-width: 0.75rem;
 }
 
 .form-field {
   display: flex;
   align-items: stretch;
-  margin: 1.5em auto;
+  flex-direction: column;
+  margin: 1.5rem auto;
   width: 100%;
+}
+@media (min-width: 40em) {
+  .form-field {
+    flex-direction: row;
+  }
 }
 .form-field .form-label {
   display: flex;
   align-items: center;
   background: #494D50;
   color: #E4E6E7;
-  padding: 0.75em 1.5em;
+  padding: 0.75rem 1.5rem;
 }
 .form-field .form-data,
 .form-field .form-data * {
@@ -192,9 +303,9 @@ button,
 input[type=submit],
 input[type=reset] {
   background: none;
-  font-family: "Arvo", serif;
+  font-family: "Cabin", sans-serif;
   color: #494D50;
-  padding: 0.75em 1.5em;
+  padding: 0.75rem 1.5rem;
   border: 3px solid #494D50;
 }
 button:hover, button:focus,
@@ -206,6 +317,15 @@ input[type=reset]:hover,
 input[type=reset]:focus {
   background: #494D50;
   color: #E4E6E7;
+}
+
+#body h1:first-child .subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 25px;
+  font-size: 1.58796rem;
+  line-height: 48px;
+  line-height: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

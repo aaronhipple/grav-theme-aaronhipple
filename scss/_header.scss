@@ -1,42 +1,45 @@
 #header {
+    overflow: hidden;
     padding-bottom: 0;
     text-align: center;
     border-bottom: rhythm(1/2) solid lighten($main-fg, 20%);
-    #logo {
-        h3 {
-            @include adjust-font-size-to(3 * $base-font-size);
-            margin: 0;
-            font-family: $font-heading;
-            font-weight: 400;
-        }
-    }
+    text-transform: lowercase;
+}
 
-    #navbar {
-        ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            li {
-                display: inline-block;
-            }
+#logo {
+    h3 {
+        @include adjust-font-size-to($base-font-size * pow($ratio, 9));
+        margin: 0;
+        font-family: $font-heading;
+        font-weight: 400;
+    }
+    a {
+        display: inline-block;
+        position: relative;
+        background-image: none;
+        transition: transform 250ms ease-in;
+        transform: perspective(10em) rotateX(-25deg);
+        &:hover,
+        &:active {
+            transition: transform 250ms ease-in;
+            transform: rotateX(00deg);
         }
-        a {
-            display: block;
-            padding: rhythm(1/2);
+        @include dot(lighten(transparentize(adjust-hue($main-fg, 180deg), 0.90), 50%), 50%, 50%, 2.33em);
+    }
+}
+
+#navbar {
+    ul {
+        padding: 0;
+        margin: 0;
+        margin-top: rhythm(1/2);
+        list-style: none;
+        li {
+            display: inline-block;
         }
     }
-    /* @media (min-width: $max-width) {
-        .container {
-            display: flex;
-            align-items: baseline;
-        }
-        #logo {
-            text-align: left;
-        }
-        #navbar {
-            flex: 1;
-            text-align: right;
-            margin-left: rhythm(1);
-        }
-    } */
+    a {
+        display: block;
+        padding: rhythm(1/2);
+    }
 }

@@ -1,0 +1,7 @@
+{% if not empty(page.header.tracks) %}
+    <ol class="tracks">
+        {% for track in page.header.tracks %}
+            <li><a href="{{ track.url }}">{{ track.title }} - {{ track.artist }}</a></li>
+        {% endfor %}
+    </ol>
+{% endif %}

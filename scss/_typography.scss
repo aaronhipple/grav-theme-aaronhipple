@@ -1,12 +1,36 @@
 @import "compass/typography/vertical_rhythm";
 $base-font-size: 16px;
+$rhythm-unit: 'rem';
 $base-line-height: 1.5 * $base-font-size;
+$ratio: 7/6;
+$lighten-step: 2.5%;
 
 $dark-bg-link-accent: adjust-hue(darken($main-bg, 30%), 180deg);
-$light-bg-link-accent: adjust-hue(lighten($main-fg, 30%), 180deg);
+$light-bg-link-accent: transparentize(adjust-hue(lighten($main-fg, 30%), 180deg), 0.5);
+
+body {
+    color: lighten($main-fg, $lighten-step * 6);
+}
 
 h1, h2, h3, h4, h5, h6, b, strong {
     font-weight: 800;
+}
+
+#body {
+    @for $i from 6 to 0 {
+        h#{$i} {
+            @include adjust-font-size-to($base-font-size * pow($ratio, 7 - $i));
+            color: lighten($main-fg, $lighten-step * $i);
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: lowercase;
+        letter-spacing: 1/32 * -1em;
+        position: relative;
+        text-align: center;
+        @include dot(transparentize(adjust-hue($main-fg, 180deg), 0.96), 50%, 50%, 2em);
+    }
 }
 
 i, em {
@@ -25,11 +49,8 @@ a {
 
     #navbar & {
         background-image: linear-gradient($dark-bg-link-accent 0%,$dark-bg-link-accent 100%);
-        background-color: $main-fg;
-        &:active {
-            background-color: lighten($main-fg, 2%);
-            @include stroke(2px, lighten($main-fg, 2%));
-        }
+        position: relative;
+        z-index: 4;
     }
 
     #navbar .active & {
@@ -37,18 +58,23 @@ a {
     }
 
     #body & {
-        color: lighten($main-fg, 20%);
         background-image: linear-gradient($light-bg-link-accent 0%,$light-bg-link-accent 100%);
         @include stroke(2px, $main-bg);
+        
+        color: lighten(saturate(adjust-hue($main-fg, 180deg), 40%), 20%);
+        &:visited {
+            color: lighten(saturate(adjust-hue($main-fg, 180deg), 10%), 10%);
+        }
     }
 
     background-repeat: repeat-x;
     background-size: 1px 0px;
     background-position: 0 100%;
-    transition: background-size 50ms linear;
+    transition: background-size 100ms ease-in;
 
-    &:hover, &:focus {
-        transition: background-size 50ms linear;
-        background-size: 1px 2px;
+    &:hover, &:focus,
+    #navbar .active &:hover, #navbar .active &:focus {
+        transition: background-size 100ms ease-in;
+        background-size: 1px 3px;
     }
 }
