@@ -174,7 +174,7 @@ body {
   transition: transform 250ms ease-in;
   transform: perspective(10em) rotateX(-25deg);
 }
-#logo a:hover, #logo a:active {
+#header:hover #logo a, #logo a:focus {
   transition: transform 250ms ease-in;
   transform: rotateX(0deg);
 }

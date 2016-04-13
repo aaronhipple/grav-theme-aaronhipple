@@ -19,8 +19,8 @@
         background-image: none;
         transition: transform 250ms ease-in;
         transform: perspective(10em) rotateX(-25deg);
-        &:hover,
-        &:active {
+        #header:hover &,
+        &:focus {
             transition: transform 250ms ease-in;
             transform: rotateX(00deg);
         }
