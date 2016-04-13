@@ -24,7 +24,8 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-        {# {% do assets.addJs('jquery',101) %} #}
+        {% do assets.addJs('jquery',101) %}
+        {% do assets.addJs('theme://js/page-loader.js') %}
     {% endblock %}
     {{ assets.js() }}
 
