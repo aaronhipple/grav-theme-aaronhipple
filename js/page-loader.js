@@ -1,6 +1,11 @@
 (function ($) {
     function isInternal(link) {
-        return (link.protocol === window.location.protocol && link.host === window.location.host)
+        var files = ['mp3', 'mp4', 'ogg', 'flv', 'jpg', 'jpeg', 'gif', 'gifv', 'bmp', 'pdf', 'doc', 'docx', 'ods'],
+            maybeExtension = link.pathname.split('/').pop().split('?').shift().split('.').pop();
+
+        console.log(files.indexOf(maybeExtension));
+
+        return (link.protocol === window.location.protocol && link.host === window.location.host && files.indexOf(maybeExtension) < 0)
     }
 
     function getHTML(element, selector) {
