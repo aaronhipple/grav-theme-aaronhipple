@@ -87,8 +87,7 @@
         });
 
         $(window).on("popstate", function(e) {
-            url = e.originalEvent.originalTarget.location;
-            updatePage(url, false);
+            updatePage(document.location, false);
         });
 
     });
