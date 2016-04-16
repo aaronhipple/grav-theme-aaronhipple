@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+    {% include "partials/title.html.twig" %}
+	{{ page.content }}
+    {% include 'partials/albums.html.twig' with {'albums': page.collection()} %}
+    
+{% endblock %}
