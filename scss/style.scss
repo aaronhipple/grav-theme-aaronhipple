@@ -2,6 +2,7 @@
 
 $main-bg: #E4E6E7;
 $main-fg: #494D50;
+$secondary-bg: lighten($main-fg, 40%);
 $max-width: 40em;
 $font-heading: 'Righteous', sans-serif;
 $font-primary: 'Cabin', sans-serif;
@@ -41,6 +42,7 @@ body {
 #body {
     flex: 1;
 }
+
 
 @import 'header';
 @import 'footer';
