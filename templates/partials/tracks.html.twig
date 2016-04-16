@@ -1,7 +1,8 @@
-{% if not empty(page.header.tracks) %}
+{% if not empty(page.media.audios) %}
     <ol class="tracks">
-        {% for track in page.header.tracks %}
-            <li><a href="{{ track.url }}">{{ track.title }} - {{ track.artist }}</a></li>
+        {% for track in page.media.audios %}
+            {% set meta = getid3(track.meta.filepath) %}
+            <li><a href="{{ track.url }}">{{ meta.comments_html.title }} - {{ meta.comments_html.artist }}</a> ({{ meta.playtime_string }})</li>
         {% endfor %}
     </ol>
 {% endif %}
