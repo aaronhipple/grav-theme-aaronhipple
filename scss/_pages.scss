@@ -1,10 +1,6 @@
 #body {
     h1:first-child {
-        .subtitle {
-            display: block;
-            font-weight: 400;
-            @include adjust-font-size-to($base-font-size * pow($ratio, 3));
-        }
+        
     }
     
     //@include baseline-grid($base-line-height, #c00, #fff);

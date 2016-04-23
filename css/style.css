@@ -34,12 +34,24 @@ h1, h2, h3, h4, h5, h6, b, strong {
   line-height: 1.5rem;
   color: #6e7478;
 }
+#body h6 .subtitle {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
 #body h5 {
   font-size: 22px;
   font-size: 1.36111rem;
   line-height: 48px;
   line-height: 3rem;
   color: #676d71;
+}
+#body h5 .subtitle {
+  font-size: 19px;
+  font-size: 1.16667rem;
+  line-height: 24px;
+  line-height: 1.5rem;
 }
 #body h4 {
   font-size: 25px;
@@ -48,12 +60,24 @@ h1, h2, h3, h4, h5, h6, b, strong {
   line-height: 3rem;
   color: #61676b;
 }
+#body h4 .subtitle {
+  font-size: 22px;
+  font-size: 1.36111rem;
+  line-height: 48px;
+  line-height: 3rem;
+}
 #body h3 {
   font-size: 30px;
   font-size: 1.85262rem;
   line-height: 48px;
   line-height: 3rem;
   color: #5b6064;
+}
+#body h3 .subtitle {
+  font-size: 25px;
+  font-size: 1.58796rem;
+  line-height: 48px;
+  line-height: 3rem;
 }
 #body h2 {
   font-size: 35px;
@@ -62,12 +86,24 @@ h1, h2, h3, h4, h5, h6, b, strong {
   line-height: 3rem;
   color: #555a5d;
 }
+#body h2 .subtitle {
+  font-size: 30px;
+  font-size: 1.85262rem;
+  line-height: 48px;
+  line-height: 3rem;
+}
 #body h1 {
   font-size: 40px;
   font-size: 2.52163rem;
   line-height: 48px;
   line-height: 3rem;
   color: #4f5357;
+}
+#body h1 .subtitle {
+  font-size: 35px;
+  font-size: 2.16139rem;
+  line-height: 48px;
+  line-height: 3rem;
 }
 #body h1, #body h2, #body h3, #body h4, #body h5, #body h6 {
   text-transform: lowercase;
@@ -95,6 +131,10 @@ h1, h2, h3, h4, h5, h6, b, strong {
   border-radius: 0.66667em;
   width: 1.33333em;
   height: 1.33333em;
+}
+#body h1 .subtitle, #body h2 .subtitle, #body h3 .subtitle, #body h4 .subtitle, #body h5 .subtitle, #body h6 .subtitle {
+  display: block;
+  font-weight: 400;
 }
 
 i, em {
@@ -342,15 +382,6 @@ input[type=reset]:hover,
 input[type=reset]:focus {
   background: #494D50;
   color: #E4E6E7;
-}
-
-#body h1:first-child .subtitle {
-  display: block;
-  font-weight: 400;
-  font-size: 25px;
-  font-size: 1.58796rem;
-  line-height: 48px;
-  line-height: 3rem;
 }
 
 #footer .container {

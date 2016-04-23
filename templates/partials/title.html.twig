@@ -1,4 +1,21 @@
-<h1>
-    {{ page.title }}
-    {% if not empty(page.header.subtitle) %}<span class="subtitle">{{ page.header.subtitle }}</span>{% endif %}
-</h1>
+{% if page.active() %}
+    <h1>
+{% else %}
+    <h3>
+{% endif %}
+    {% if page.active() %}
+        {{ page.title }}
+    {% else %}
+        <a href="{{ page.url }}">{{ page.title }}</a>
+    {% endif %}
+
+    {% if not ( empty(page.header.subtitle) or page.header.subtitle == null ) %}
+        <span class="subtitle">{{ page.header.subtitle }}</span>
+    {% elseif page.template() == 'item' %}
+        <span class="subtitle">{{ page.date|date('Y-m-d') }}</span>
+    {% endif %}
+{% if page.active() %}
+    </h3>
+{% else %}
+    </h1>
+{% endif %}

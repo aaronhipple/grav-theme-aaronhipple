@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5, h6, b, strong {
         h#{$i} {
             @include adjust-font-size-to($base-font-size * pow($ratio, 7 - $i));
             color: lighten($main-fg, $lighten-step * $i);
+            .subtitle {
+                @include adjust-font-size-to($base-font-size * pow($ratio, 6 - $i));
+            }
         }
     }
 
@@ -30,6 +33,10 @@ h1, h2, h3, h4, h5, h6, b, strong {
         position: relative;
         text-align: center;
         @include dot(transparentize(adjust-hue($main-fg, 180deg), 0.96), 50%, 50%, 2em);
+        .subtitle {
+            display: block;
+            font-weight: 400;
+        }
     }
 }
 
