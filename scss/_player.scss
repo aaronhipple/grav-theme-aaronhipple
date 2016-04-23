@@ -10,6 +10,7 @@ $transition-time: 200ms;
 
 #player {
     position: fixed;
+    z-index: 8;
     bottom: 0;
     transition: transform $transition-time ease-in-out;
     &.active {
