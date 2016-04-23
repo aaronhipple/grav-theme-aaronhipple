@@ -428,9 +428,6 @@ input[type=reset]:focus {
   max-width: 3rem;
   transform: translateX(-100%);
 }
-#player.active .handle:before {
-  content: 'hide';
-}
 #player ul {
   list-style-type: none;
   padding: 0;

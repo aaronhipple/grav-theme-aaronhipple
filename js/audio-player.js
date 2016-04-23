@@ -114,10 +114,20 @@ var Player = function (element) {
             _this.audioElement.play();
             _this.controls.play.classList.add('playing');
             _this.current.classList.add('playing');
+            _this.controls.play.getElementsByTagName('use')[0].setAttributeNS(
+                'http://www.w3.org/1999/xlink',
+                'href',
+                '#play-icon'
+            );
             return;
         }
         _this.audioElement.pause();
         _this.controls.play.classList.remove('playing');
+        _this.controls.play.getElementsByTagName('use')[0].setAttributeNS(
+            'http://www.w3.org/1999/xlink',
+            'href',
+            '#pause-icon'
+        );
     }
 
     this.next = function() {

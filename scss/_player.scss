@@ -75,11 +75,6 @@ $transition-time: 200ms;
         max-width: rhythm(2);
         transform: translateX(-100%);
     }
-    &.active .handle {
-        &:before {
-            content: 'hide';
-        }
-    }
 
     ul {
         list-style-type: none;
