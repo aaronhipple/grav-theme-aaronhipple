@@ -70,13 +70,17 @@
         request.send(null);
     }
 
+    function supports_history_api() {
+        return !!(window.history && history.pushState);
+    }
+
     $(document).ready(function () {
 
         $('body').on('click', 'a', function (e) {
             var url = $(this).attr('href'),
                 target = $(this)[0];
 
-            if (!isInternal(target)) {
+            if (!supports_history_api() || !isInternal(target)) {
                 return;
             }
 
