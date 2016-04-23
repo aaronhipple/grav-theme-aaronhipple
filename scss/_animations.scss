@@ -1,0 +1,8 @@
+@keyframes wiggle {
+    0%    { transform: perspective(10em) scale(1) rotateX(-25deg); }
+    20%   { transform: perspective(10em) scale(1.1) rotateX(0deg); }
+    40%   { transform: perspective(10em) scale(1) rotateX(-15deg); }
+    60%   { transform: perspective(10em) scale(1.07) rotateX(0deg); }
+    80%   { transform: perspective(10em) scale(1) rotateX(-10deg); }
+    100%  { transform: perspective(10em) scale(1.05) rotateX(0deg); }
+}

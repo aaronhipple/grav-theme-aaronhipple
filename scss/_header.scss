@@ -22,8 +22,11 @@
         transform: perspective(10em) rotateX(-25deg);
         #header:hover &,
         &:focus {
-            transition: transform 250ms ease-in;
-            transform: rotateX(00deg);
+            animation-name: wiggle;
+            animation-timing-function: ease-in-out;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
         }
         @include dot(lighten(transparentize(adjust-hue($main-fg, 180deg), 0.90), 50%), 50%, 50%, 2.33em);
     }

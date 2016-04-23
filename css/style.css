@@ -1,3 +1,24 @@
+@charset "UTF-8";
+@keyframes wiggle {
+  0% {
+    transform: perspective(10em) scale(1) rotateX(-25deg);
+  }
+  20% {
+    transform: perspective(10em) scale(1.1) rotateX(0deg);
+  }
+  40% {
+    transform: perspective(10em) scale(1) rotateX(-15deg);
+  }
+  60% {
+    transform: perspective(10em) scale(1.07) rotateX(0deg);
+  }
+  80% {
+    transform: perspective(10em) scale(1) rotateX(-10deg);
+  }
+  100% {
+    transform: perspective(10em) scale(1.05) rotateX(0deg);
+  }
+}
 body {
   color: #6e7478;
 }
@@ -176,8 +197,11 @@ body {
   transform: perspective(10em) rotateX(-25deg);
 }
 #header:hover #logo a, #logo a:focus {
-  transition: transform 250ms ease-in;
-  transform: rotateX(0deg);
+  animation-name: wiggle;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 #logo a:before, #logo a:after {
   content: '';
@@ -327,6 +351,106 @@ input[type=reset]:focus {
   font-size: 1.58796rem;
   line-height: 48px;
   line-height: 3rem;
+}
+
+#footer .container {
+  transition: padding-bottom 200ms ease-in-out;
+}
+@media (min-width: 40em) {
+  #footer .container {
+    padding-bottom: 0 !important;
+  }
+}
+
+#player {
+  position: fixed;
+  bottom: 0;
+  transition: transform 200ms ease-in-out;
+  width: 100%;
+  transform: translateX(100%);
+  right: 0;
+  background: #aaa;
+}
+#player.active {
+  transform: translateX(0);
+}
+@media (min-width: 40em) {
+  #player {
+    transform: translateX(20em);
+    width: 20em;
+  }
+}
+#player audio {
+  display: none;
+}
+#player .progress {
+  display: block;
+  background: #7a8085;
+}
+#player .progress .bar {
+  display: block;
+  width: 0;
+  background: #494D50;
+  height: 1.5rem;
+}
+#player .controls {
+  height: 3rem;
+  display: flex;
+  align-items: stretch;
+  text-align: center;
+}
+#player .controls svg {
+  fill: #494D50;
+}
+#player .controls span {
+  display: block;
+  flex: 1 25%;
+  height: 3rem;
+  cursor: pointer;
+}
+#player .handle {
+  background: #6e7478;
+  color: #bcc1c3;
+  transition: transform 200ms ease-in-out;
+}
+@media (min-width: 40em) {
+  #player .handle {
+    width: 3rem;
+  }
+}
+#player .handle:before {
+  display: block;
+  font-size: 1.25em;
+  line-height: 3rem;
+  content: "♫";
+}
+#player:not(.active) .handle {
+  max-width: 3rem;
+  transform: translateX(-100%);
+}
+#player.active .handle:before {
+  content: 'hide';
+}
+#player ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+#player ul .playing {
+  background: rgba(255, 255, 255, 0.25);
+}
+#player ul li {
+  overflow: hidden;
+  padding: 0.375rem;
+}
+#player ul li .remove {
+  cursor: pointer;
+  display: block;
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */

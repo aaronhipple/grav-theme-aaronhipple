@@ -2,7 +2,7 @@
     <ol class="tracks">
         {% for track in page.media.audios %}
             {% set meta = getid3(track.meta.filepath) %}
-            <li><a href="{{ track.url }}">{{ meta.comments_html.title }} - {{ meta.comments_html.artist }}</a> ({{ meta.playtime_string }})</li>
+            <li><a data-title="{{ meta.comments_html.title }}" data-artist="{{ meta.comments_html.artist }}" data-time="{{ meta.playtime_string }}" href="{{ track.url }}">{{ meta.comments_html.title }} - {{ meta.comments_html.artist }}</a> ({{ meta.playtime_string }})</li>
         {% endfor %}
     </ol>
 {% endif %}

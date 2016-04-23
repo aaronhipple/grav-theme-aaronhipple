@@ -9,6 +9,7 @@ $font-primary: 'Cabin', sans-serif;
 
 @import 'functions';
 @import 'mixins';
+@import 'animations';
 @import 'typography';
 @include establish-baseline();
  
@@ -48,3 +49,4 @@ body {
 @import 'footer';
 @import 'forms';
 @import 'pages';
+@import 'player';

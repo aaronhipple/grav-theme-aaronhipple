@@ -1,0 +1,102 @@
+$player-breakpoint: 40em;
+$transition-time: 200ms;
+
+#footer .container {
+    transition: padding-bottom $transition-time ease-in-out;
+    @media (min-width : $player-breakpoint) {
+        padding-bottom: 0 !important;
+    }
+}
+
+#player {
+    position: fixed;
+    bottom: 0;
+    transition: transform $transition-time ease-in-out;
+    &.active {
+        transform: translateX(0);
+    }
+    width: 100%;
+    transform: translateX(100%);
+    @media (min-width : $player-breakpoint) {
+        transform: translateX(20em);
+        width: 20em;
+    }
+    right: 0;
+    background: #aaa;
+
+    audio {
+        display: none;
+    }
+
+    .progress {
+        display: block;
+        background: lighten($main-fg, 20%);
+        .bar {
+            display: block;
+            width: 0;
+            background: $main-fg;
+            height: rhythm(1);
+        }
+    }
+
+    .controls {
+        svg {
+            fill: $main-fg;
+        }
+        height: rhythm(2);
+        display: flex;
+        align-items: stretch;
+        text-align: center;
+        span {
+            display: block;
+            flex: 1 25%;
+            height: rhythm(2);
+            cursor: pointer;
+        }
+    }
+
+    .handle {
+        background: lighten($main-fg, 15%);
+        color: darken($main-bg, 15%);
+        @media (min-width : $player-breakpoint) {
+            width: rhythm(2);
+        }
+        transition: transform $transition-time ease-in-out;
+        
+        &:before {
+            display: block;
+            font-size: 1.25em;
+            line-height: rhythm(2);
+            content: "♫";
+        }
+    }
+
+    &:not(.active) .handle {
+        max-width: rhythm(2);
+        transform: translateX(-100%);
+    }
+    &.active .handle {
+        &:before {
+            content: 'hide';
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        .playing {
+            background: rgba(255,255,255,0.25);
+        }
+        li {
+            overflow: hidden;
+            padding: rhythm(0.25);
+            .remove {
+                cursor: pointer;
+                display: block;
+                float: right;
+            }
+        }
+        @include adjust-font-size-to(0.85 * $base-font-size);
+    }
+}

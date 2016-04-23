@@ -1,11 +1,15 @@
 (function ($) {
+
     function isInternal(link) {
-        var files = ['mp3', 'mp4', 'ogg', 'flv', 'jpg', 'jpeg', 'gif', 'gifv', 'bmp', 'pdf', 'doc', 'docx', 'ods'],
+        var files = ['flv', 'jpg', 'jpeg', 'gif', 'gifv', 'bmp', 'pdf', 'doc', 'docx', 'ods'],
             maybeExtension = link.pathname.split('/').pop().split('?').shift().split('.').pop();
-
-        console.log(files.indexOf(maybeExtension));
-
         return (link.protocol === window.location.protocol && link.host === window.location.host && files.indexOf(maybeExtension) < 0)
+    }
+
+    function isAudio(link) {
+        var files = ['mp3', 'mp4', 'ogg'],
+            maybeExtension = link.pathname.split('/').pop().split('?').shift().split('.').pop();
+        return (files.indexOf(maybeExtension) > -1)
     }
 
     function getHTML(element, selector) {
@@ -70,22 +74,55 @@
         request.send(null);
     }
 
-    function supports_history_api() {
+    function supportsHistoryAPI() {
         return !!(window.history && history.pushState);
     }
 
+    function recalculateBodyMargin() {
+        var $player = $('#player'),
+            playerHeight = $player.hasClass('active') ? $player.height() + "px" : "0px";
+        $('#footer .container').css('padding-bottom', playerHeight);
+    }
+
     $(document).ready(function () {
+        $('<div id="player" />').appendTo('#sb-site');
+
+        var player = new Player(document.getElementById('player'));
+
+        $('#player .handle').click(function () {
+            var $player = $('#player')
+            $player.toggleClass('active');
+            if ($player.hasClass('active')) {
+                $('body').addClass('player-active');
+            } else {
+                $('body').removeClass('player-active');
+            }
+        });
+
+        $('#player').click(recalculateBodyMargin);
 
         $('body').on('click', 'a', function (e) {
             var url = $(this).attr('href'),
                 target = $(this)[0];
 
-            if (!supports_history_api() || !isInternal(target)) {
+            if (!supportsHistoryAPI() || !isInternal(target)) {
                 return;
             }
 
             e.preventDefault();
             e.stopPropagation();
+
+            if (isAudio(target)) {
+                player.add(
+                    url,
+                    $(this).attr('data-title'),
+                    $(this).attr('data-artist'),
+                    $(this).attr('data-time')
+                );
+                $('#player').addClass('active');
+                recalculateBodyMargin();
+                return;
+            }
 
             updatePage(url, true);
         });
