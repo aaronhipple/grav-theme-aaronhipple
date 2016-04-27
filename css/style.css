@@ -182,7 +182,7 @@ html {
 
 body {
   background: #E4E6E7;
-  font-family: "Cabin", sans-serif;
+  font-family: "Questrial", sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -225,7 +225,7 @@ body {
   line-height: 72px;
   line-height: 4.5rem;
   margin: 0;
-  font-family: "Righteous", sans-serif;
+  font-family: "Fredoka One", sans-serif;
   font-weight: 400;
 }
 #logo a {
@@ -305,7 +305,7 @@ body {
 input,
 select,
 textarea {
-  font-family: "Cabin", sans-serif;
+  font-family: "Questrial", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
@@ -368,7 +368,7 @@ button,
 input[type=submit],
 input[type=reset] {
   background: none;
-  font-family: "Cabin", sans-serif;
+  font-family: "Questrial", sans-serif;
   color: #494D50;
   padding: 0.75rem 1.5rem;
   border: 3px solid #494D50;
